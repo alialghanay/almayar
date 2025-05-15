@@ -1,0 +1,49 @@
+{
+  "common": {
+    "title": "Al Mayar for Qualification and Training",
+    "language": "Language",
+    "quick-links": "Quick Links",
+    "follow-us": "Stay Connected"
+  },
+  "Navs": {
+    "home": "Home",
+    "certificates": "Certificates",
+    "services": "Services",
+    "contact-us": "Contact Us"
+  },
+  "Socials": {
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn"
+  },
+  "Footer": {
+    "cookie": "Cookie Settings",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "rights": "All rights reserved"
+  },
+  "HomePage": {
+    "banner": "Empowering Organizations through International Standards.",
+    "banner-description": "At Almayar, we are dedicated to enhancing organizational capabilities through tailored qualification, training, and consulting services. Our mission is to align your operations with international standards for lasting success.",
+    "journey": "Discover Our Journey: Almayar's Commitment to Excellence Since 2008",
+    "journey-description": "Founded in 2008 under Law No. (9) of 1996, Almayar Company for Qualification, Training & Consulting has been delivering exceptional services across various sectors. With a foundation of highly qualified local professionals and collaborations with international experts, we offer world-class technical support. Our tailored, results-driven approach ensures impactful solutions, from achieving ISO certifications to enhancing organizational performance and building internal capabilities. Almayar is your trusted partner for sustainable growth and operational excellence.",
+    "services": "Services",
+    "services-title": "Explore Our Comprehensive Service Offerings",
+    "services-description": "At Almayar, we specialize in delivering tailored qualification consulting and technical & managerial training services for organizations in both the production and service sectors. Our expert team is dedicated to helping institutions achieve international standards, including ISO certifications (ISO 9001, ISO 14001, ISO 22000, ISO 45001...), and improve operational efficiency through custom training programs and strategic consultations.` Discover how our solutions can empower your organization to grow, comply, and lead in today’s competitive landscape.",
+    "services-qualification-title": "Qualification Consulting Services",
+    "services-qualification-description": "We guide organizations in obtaining essential international certifications, ensuring compliance with global standards such as ISO 9001, ISO 14001, ISO 22000, ISO 45001, and more.",
+    "services-technical-title": "Technical & Managerial Training Services",
+    "services-technical-description": "Our customized training programs are designed to elevate skills and knowledge in your organization, helping teams stay competitive and efficient in their roles.",
+    "services-tailored-title": "Tailored Solutions for Your Needs",
+    "services-tailored-description": "We offer customized approaches to address your specific requirements, ensuring that every solution is relevant and impactful for your organization’s success.",
+    "services-btn": "Learn More",
+    "partners-title": "Trusted by Leading Companies",
+    "partners-description": "With over 17 years of experience, we have successfully qualified more than 52 public and private entities in modern management systems."
+  },
+  "CertificatePage": {
+    "title": "Certificates of thanks and appreciation",
+    "description": "We are proud to have received certificates of appreciation from various entities, reflecting the quality of our services and effective contributions.",
+    "title-2": "Company meetings and events",
+    "description-2": "Live footage of meetings and events that reflect professional interaction and teamwork within our company."
+  }
+}
