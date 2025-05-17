@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const dirPath = searchParams.get("path");
-
+  console.log(dirPath);
   if (!dirPath) {
     return NextResponse.json(
       { error: "Path parameter is required" },
@@ -14,6 +14,7 @@ export async function GET(request: Request) {
   }
 
   const dir = path.join(process.cwd(), dirPath);
+  console.log(dir);
   if (!fs.existsSync(dir) || !fs.lstatSync(dir).isDirectory()) {
     return NextResponse.json(
       { error: "Invalid directory path" },
