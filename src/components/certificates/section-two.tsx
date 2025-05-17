@@ -1,4 +1,8 @@
+"use client";
 import { useTranslations } from "next-intl";
+import CertificatesCarousel from "./certificates-carousel";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SectionTwo = () => {
   const t = useTranslations("CertificatePage");

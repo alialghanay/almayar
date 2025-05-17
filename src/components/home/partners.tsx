@@ -3,15 +3,20 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Partners = () => {
   const t = useTranslations("HomePage");
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("/api/images")
-      .then((res) => res.json())
-      .then(setImages);
+    axios
+      .get("/api/images?path=public/partners")
+      .then((res) => setImages(res.data))
+      .catch((err) => {
+        console.log("Error fetching images:", err);
+        setImages([]);
+      });
   }, []);
   return (
     <section className="flex items-center justify-center py-10">
