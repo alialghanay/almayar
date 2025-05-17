@@ -1,5 +1,5 @@
 declare module "global" {
-  import { Messages, PageKeys } from "local";
+  import { PageKeys } from "local";
 
   type NavType = "link" | "dropdown";
 

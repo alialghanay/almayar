@@ -11,6 +11,7 @@ export default async function GalleryPage() {
           src={`/partners/${img}`}
           alt={`img-${i}`}
           className="w-full"
+          loading="lazy"
         />
       ))}
     </div>
