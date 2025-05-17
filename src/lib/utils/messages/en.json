@@ -50,6 +50,98 @@
     "title-2": "Company meetings and events",
     "description-2": "Live footage of meetings and events that reflect professional interaction and teamwork within our company."
   },
-  "TrainingServicesPage": {},
-  "QualificationServicesPage": {}
+  "TrainingServicesPage": {
+    "sectionOne": {
+      "title": "Training Management",
+      "description": "Organizations strive to train their employees to prepare them for productive work and retain them at the required service level. It is a continuous process to ensure the ongoing improvement of performance to achieve organizational goals.\nThe training process relies on accurately identifying training needs, selecting appropriate training programs to enhance efficiency, trainers and trainees, the training methods used, and the training environment.\nIt also depends on evaluating training programs, the benefits gained by the trainees, and the impact on performance rates through increased productivity.\nTherefore, we believe in the importance of supporting and assisting clients in identifying training needs, choosing the most suitable programs, evaluating those programs, and measuring the benefits gained from their implementation. We can also design training programs tailored to the operations and activities of the organization."
+    },
+    "sectionTwo": {
+      "title": "Training Courses in Management Systems",
+      "description": "These courses focus on improving work systems within production and service organizations by equipping participants with the knowledge and skills needed to apply international standards. The programs aim to qualify participants for global certifications such as various ISO standards to ensure institutional excellence and enhance operational efficiency.",
+      "list": {
+        "item0": {
+          "title": "Concepts and Requirements of the ISO 9001 Quality Management System",
+          "description": "This course aims to provide participants with fundamental concepts and the requirements of the ISO 9001 Quality Management System, which is one of the most prominent internationally recognized standards for improving the quality of products and services within organizations."
+        },
+        "item1": {
+          "title": "Concepts and Requirements of the ISO 14001 Environmental Management System",
+          "description": "This course focuses on understanding the core requirements of the ISO 14001 Environmental Management System, which aims to help organizations improve their environmental performance and reduce negative environmental impacts."
+        },
+        "item2": {
+          "title": "Internal Auditor Preparation for Management Systems - ISO 19011",
+          "description": "This course is essential for training internal auditors who will review the management systems implemented within organizations in accordance with ISO 19011, which defines the principles and requirements for conducting internal audits of management systems."
+        },
+        "item3": {
+          "title": "Concepts and Applications of the ISO/IEC 17020 International Standard - General Requirements for Inspection Bodies",
+          "description": "This course is essential for individuals and organizations seeking to understand and apply ISO/IEC 17020, which addresses general requirements for various types of inspection bodies. The standard covers the efficient and high-quality management and coordination of inspection processes to ensure compliance with international standards in this field."
+        },
+        "item4": {
+          "title": "Concepts and Applications of ISO/IEC 17025 - General Requirements for the Competence of Testing and Calibration Laboratories",
+          "description": "This training course is essential for organizations and laboratories aiming to achieve competence and reliability in testing and calibration processes. It focuses on ISO/IEC 17025, the international standard that defines the requirements for laboratory competence and quality. The course introduces best practices to ensure laboratories operate according to international standards."
+        },
+        "item5": {
+          "title": "Concepts and Applications of ISO 22000 - Food Safety Management Systems",
+          "description": "The 'ISO 22000' course is a global standard that ensures the efficiency of food safety management systems. This course aims to educate participants on how to apply the principles of ISO 22000 to ensure food safety at all stages of the supply chain—from production to distribution—using scientific and practical foundations to safeguard consumers’ health and safety."
+        }
+      }
+    },
+    "sectionThree": {
+      "title": "Specialized Technical Training",
+      "description": "The company designs and delivers specialized technical training programs based on the actual technical training needs of clients to enhance employee performance. Some of these programs have been implemented while others are currently under development:",
+      "list": {
+        "item0": {
+          "title": "Theoretical and Practical Training in Mechanical Engineering for Engineers and Technicians on Production Lines such as Design and Mechanical Works",
+          "description": "This training aims to provide engineers and technicians with the theoretical knowledge and practical skills required to perform mechanical engineering tasks in production environments. It focuses on designing mechanical systems and effectively executing mechanical works, contributing to improved production processes and operational efficiency."
+        },
+        "item1": {
+          "title": "Quality Control on Production Lines",
+          "description": "The 'Quality Control on Production Lines' training aims to teach engineers and technicians how to implement and monitor quality standards at various stages of the production process. It emphasizes the application of methods and procedures that ensure high-quality product output, including inspecting raw materials, monitoring production processes, and final product testing."
+        },
+        "item2": {
+          "title": "Mechanical and Non-Destructive Testing (NDT)",
+          "description": "These are fundamental techniques used in production industries to ensure the safety and quality of materials and engineering components without altering or damaging their properties. These tests are crucial for quality control and maintaining safety across various industries such as oil and gas, energy, construction, and manufacturing."
+        },
+        "item3": {
+          "title": "Training in Food Inspection and Monitoring of Food Product Factories",
+          "description": "Food inspection and monitoring of food product factories are critical fields that ensure the safety and quality of products delivered to consumers. This involves a professional and detailed inspection of all stages of food production and processing—from receiving raw materials to the final product—to ensure factories comply with health and food safety standards."
+        },
+        "item4": {
+          "title": "Occupational Health and Safety Training",
+          "description": "Training in occupational health and safety is fundamental to creating a safe and healthy work environment for employees and reducing occupational hazards that may affect their well-being. This training aims to raise awareness about the importance of workplace safety and to encourage adherence to preventive measures that help reduce accidents and injuries."
+        }
+      }
+    }
+  },
+  "QualificationServicesPage": {
+    "sectionOne": {
+      "title": "Management Systems Qualification Department",
+      "description": "Specialized in providing technical consulting and training programs for production and service institutions to develop their work systems and qualify them to implement and meet the requirements of international standards. The qualification is offered in the following areas:",
+      "list": {
+        "item0": {
+          "title": "Certificate of Conformity to Quality Management System Requirements ISO 9001",
+          "description": "ISO 9001 is an international certificate awarded to institutions that implement an effective quality management system according to ISO standards. It aims to improve operational efficiency, increase customer satisfaction, and ensure continuous improvement in all aspects of work."
+        },
+        "item1": {
+          "title": "Certificate of Conformity to Environmental Management System Requirements ISO 14001",
+          "description": "The ISO/IEC 17020 standard defines the general requirements for the competence of various types of inspection bodies, including independence, integrity, and quality of services provided. It aims to ensure the reliability of inspection processes and standardize practices among working entities in this field."
+        },
+        "item2": {
+          "title": "Compliance with International Standard for Testing and Calibration Laboratories ISO/IEC 17025",
+          "description": "ISO/IEC 17025 is the international standard for the competence of testing and calibration laboratories. It is awarded to laboratories that demonstrate the ability to conduct accurate and reliable testing."
+        },
+        "item3": {
+          "title": "Compliance with International Standard for Testing and Calibration Laboratories ISO/IEC 17025",
+          "description": "ISO/IEC 17025 is the international standard for the competence of testing and calibration laboratories. It is awarded to laboratories that demonstrate the ability to conduct accurate and reliable testing."
+        },
+        "item4": {
+          "title": "Certificate of Conformity to Food Safety Management Systems ISO 22000",
+          "description": "ISO 22000 is an international standard granted to institutions that implement an effective food safety management system. It aims to ensure the delivery of safe food products to consumers across all stages of the food chain."
+        },
+        "item5": {
+          "title": "Certificate of Conformity to Occupational Health and Safety Management Systems ISO 45001",
+          "description": "ISO 45001 is an international standard granted to organizations that apply an effective occupational health and safety management system. It aims to protect workers and reduce risks in the workplace."
+        }
+      }
+    }
+  }
 }
