@@ -8,18 +8,34 @@ export default function useNavbar(): Navs {
     HomePage: {
       title: t("home"),
       url: "/",
+      type: "link",
     },
     ServicesPage: {
       title: t("services"),
       url: "/services",
+      type: "dropdown",
+      children: {
+        TrainingServicesPage: {
+          title: t("training"),
+          url: "/services/training",
+          type: "link",
+        },
+        QualificationServicesPage: {
+          title: t("qualification"),
+          url: "/services/qualification",
+          type: "link",
+        },
+      },
     },
     CertificatesPage: {
       title: t("certificates"),
       url: "/certificates",
+      type: "link",
     },
     ContactUsPage: {
       title: t("contact-us"),
       url: "/contact-us",
+      type: "link",
     },
   };
 }

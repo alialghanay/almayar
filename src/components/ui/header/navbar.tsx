@@ -1,6 +1,7 @@
 import { Navs } from "global";
-import Link from "next/link";
 import LocaleSwitcher from "../locale-switcher";
+import NavDropdown from "./nav-dropdown";
+import NavItem from "./nav-item";
 
 const NavBar = ({ data, pathname }: { data: Navs; pathname: string }) => {
   return (
@@ -15,9 +16,11 @@ const NavBar = ({ data, pathname }: { data: Navs; pathname: string }) => {
                 : "hover:text-lg"
             }
           >
-            <Link className="font-semibold" href={page.url}>
-              {page.title}
-            </Link>
+            {page.type === "link" ? (
+              <NavItem title={page.title} url={page.url} />
+            ) : page.type === "dropdown" ? (
+              <NavDropdown page={page} />
+            ) : null}
           </li>
         ))}
       </ul>

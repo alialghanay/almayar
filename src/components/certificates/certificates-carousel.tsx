@@ -5,20 +5,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 const CertificatesCarousel = ({ images }: { images?: string[] }) => {
   return (
-    <Carousel>
+    <Carousel dir="ltr">
       <CarouselContent>
         {images?.map((img, index) => (
           <CarouselItem
             key={index}
-            className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px]"
+            className="relative w-[300px] h-[400px] md:basis-1/3"
           >
-            <img
+            <Image
               src={`/certificate/${img}`}
               alt={`Certificate ${index + 1}`}
-              className="object-cover w-full h-full"
+              fill
+              className="object-contain"
             />
           </CarouselItem>
         ))}

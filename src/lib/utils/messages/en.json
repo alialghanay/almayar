@@ -3,12 +3,16 @@
     "title": "Al Mayar for Qualification and Training",
     "language": "Language",
     "quick-links": "Quick Links",
-    "follow-us": "Stay Connected"
+    "follow-us": "Stay Connected",
+    "arabic": "Arabic",
+    "english": "English"
   },
   "Navs": {
     "home": "Home",
     "certificates": "Certificates",
     "services": "Services",
+    "training": "Training",
+    "qualification": "Qualification",
     "contact-us": "Contact Us"
   },
   "Socials": {
@@ -45,5 +49,7 @@
     "description": "We are proud to have received certificates of appreciation from various entities, reflecting the quality of our services and effective contributions.",
     "title-2": "Company meetings and events",
     "description-2": "Live footage of meetings and events that reflect professional interaction and teamwork within our company."
-  }
+  },
+  "TrainingServicesPage": {},
+  "QualificationServicesPage": {}
 }

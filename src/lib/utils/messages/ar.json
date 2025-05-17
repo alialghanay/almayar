@@ -3,12 +3,16 @@
     "title": "الميار للتأهيل والتدريب",
     "language": "اللغة",
     "quick-links": "روابط سريعة",
-    "follow-us": "تابعنا"
+    "follow-us": "تابعنا",
+    "arabic": "العربية",
+    "english": "الإنجليزية"
   },
   "Navs": {
     "home": "الرئيسية",
     "certificates": "الشهادات",
     "services": "الخدمات",
+    "training": "التدريب",
+    "qualification": "التأهيل",
     "contact-us": "اتصل بنا"
   },
   "Socials": {
@@ -46,5 +50,7 @@
     "description": "نفخر بتلقي شهادات تقدير من جهات مختلفة، تعكس جودة خدماتنا ومساهماتنا الفعالة.",
     "title-2": "اجتماعات وفعاليات الشركة",
     "description-2": "لقطات حية لاجتماعات وفعاليات تعكس التفاعل المهني والعمل الجماعي داخل شركتنا."
-  }
+  },
+  "TrainingServicesPage": {},
+  "QualificationServicesPage": {}
 }

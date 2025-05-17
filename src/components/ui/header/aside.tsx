@@ -1,5 +1,7 @@
 import { Navs } from "global";
-import Link from "next/link";
+import NavItem from "./nav-item";
+import NavDropdown from "./nav-dropdown";
+import LocaleSwitcher from "../locale-switcher";
 
 const Aside = ({
   data,
@@ -22,14 +24,21 @@ const Aside = ({
             <li
               key={pageKey}
               className={
-                pathname == page.url ? "text-primary" : "hover:text-primary"
+                pathname == page.url
+                  ? "text-lg underline underline-offset-4 decoration-2 decoration-blue-900"
+                  : "hover:text-lg"
               }
             >
-              <Link href={page.url}>{page.title}</Link>
+              {page.type === "link" ? (
+                <NavItem title={page.title} url={page.url} />
+              ) : page.type === "dropdown" ? (
+                <NavDropdown page={page} />
+              ) : null}
             </li>
           ))}
         </ul>
       </div>
+      <LocaleSwitcher />
     </aside>
   );
 };
