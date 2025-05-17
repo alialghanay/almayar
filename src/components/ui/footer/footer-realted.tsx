@@ -2,7 +2,6 @@ import { Link } from "@/lib/utils/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 const FooterRelated = () => {
-  const t = useTranslations("common");
   const tfooter = useTranslations("Footer");
   return (
     <div className="md:flex gap-4">
