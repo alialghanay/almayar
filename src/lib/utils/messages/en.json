@@ -143,5 +143,34 @@
         }
       }
     }
+  },
+  "ContactUsPage": {
+    "title": "Contact Us",
+    "description": "We are here to answer your inquiries and provide the support you need. Feel free to contact us through any of the following means.",
+    "address": "Address",
+    "address-description": "Tajoura, Tripoli, Libya",
+    "email": "Email",
+    "phone": "Phone",
+    "fax": "Fax",
+    "location": "Location on Map",
+    "forms": "Request and Complaint Forms",
+    "forms-description": "We offer a set of electronic forms to facilitate communication with us and request our various services with ease.",
+    "forms-list": {
+      "item0": {
+        "title": "Information Request Form for Qualification Purposes",
+        "description": "For institutions seeking qualification for quality certificates and international standards.",
+        "btn": "Open Form"
+      },
+      "item1": {
+        "title": "Customer Complaint or Grievance Form",
+        "description": "We welcome all complaints and feedback to ensure the quality of our services improves.",
+        "btn": "Submit Complaint"
+      },
+      "item2": {
+        "title": "Training Needs Form",
+        "description": "For institutions that wish to design or customize training programs for their employees.",
+        "btn": "Request Training"
+      }
+    }
   }
 }
