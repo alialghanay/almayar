@@ -17,22 +17,31 @@ const Contacts = () => {
       icon: <Mail />,
       title: t("email"),
       description: [
-        <a href="tel:+218 91 123 4567">+218 92 600 8557</a>,
-        <a href="tel:+218 91 123 4567">+218 91 329 1516</a>,
+        <a key="info@almayar.ly" href="mailto:info@almayar.ly">
+          info@almayar.ly
+        </a>,
       ],
     },
     {
       icon: <Phone />,
       title: t("phone"),
       description: [
-        <a href="tel:+218 91 123 4567">+218 92 600 8557</a>,
-        <a href="tel:+218 91 123 4567">+218 91 329 1516</a>,
+        <a key="+218 92 600 8557" href="tel:+218 91 123 4567">
+          +218 92 600 8557
+        </a>,
+        <a key="+218 91 329 1516" href="tel:+218 91 123 4567">
+          +218 91 329 1516
+        </a>,
       ],
     },
     {
       icon: <Printer />,
       title: t("fax"),
-      description: [<a href="tel:+218 21 369 7577">+218 21 369 7577</a>],
+      description: [
+        <a key="+218 21 369 7577" href="tel:+218 21 369 7577">
+          +218 21 369 7577
+        </a>,
+      ],
     },
   ];
   return (
@@ -55,7 +64,7 @@ const Contacts = () => {
             <p className="text-xs sm:text-sm md:text-base">
               {Array.isArray(contact.description)
                 ? contact.description.map((desc, i) => (
-                    <span key={i} className="block">
+                    <span key={`desc-${index}-${i}`} className="block">
                       {desc}
                     </span>
                   ))
