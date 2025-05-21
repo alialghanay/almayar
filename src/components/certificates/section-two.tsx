@@ -9,7 +9,7 @@ const SectionTwo = () => {
   const [images, setImages] = useState<string[]>([]);
   useEffect(() => {
     axios
-      .get("/api/images?path=event")
+      .get("/api/images?path=public/event")
       .then((res) => setImages(res.data))
       .catch((err) => {
         console.log("Error fetching images:", err);

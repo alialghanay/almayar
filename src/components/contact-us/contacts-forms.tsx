@@ -11,21 +11,21 @@ const ContactsForm = () => {
       title: t("forms-list.item0.title"),
       description: t("forms-list.item0.description"),
       btnLabel: t("forms-list.item0.btn"),
-      icon: <Folder className="w-4 h-4" />,
+      icon: <Folder className="size-8" />,
       btnAction: () => {},
     },
     {
       title: t("forms-list.item1.title"),
       description: t("forms-list.item1.description"),
       btnLabel: t("forms-list.item1.btn"),
-      icon: <Megaphone className="w-4 h-4" />,
+      icon: <Megaphone className="size-8" />,
       btnAction: () => {},
     },
     {
       title: t("forms-list.item2.title"),
       description: t("forms-list.item2.description"),
       btnLabel: t("forms-list.item2.btn"),
-      icon: <Lightbulb className="w-4 h-4" />,
+      icon: <Lightbulb className="size-8" />,
       btnAction: () => {},
     },
   ];
@@ -39,7 +39,7 @@ const ContactsForm = () => {
           {t("forms-description")}
         </p>
       </div>
-      <div>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-8 mt-8">
         {cards.map((card, index) => (
           <FromsCard
             key={index}

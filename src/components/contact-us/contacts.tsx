@@ -7,37 +7,67 @@ const Map = dynamic(() => import("./map"), {
 });
 const Contacts = () => {
   const t = useTranslations("ContactUsPage");
+  const contacts = [
+    {
+      icon: <MapPin className="size-8" />,
+      title: t("address"),
+      description: t("address-description"),
+    },
+    {
+      icon: <Mail />,
+      title: t("email"),
+      description: [
+        <a href="tel:+218 91 123 4567">+218 92 600 8557</a>,
+        <a href="tel:+218 91 123 4567">+218 91 329 1516</a>,
+      ],
+    },
+    {
+      icon: <Phone />,
+      title: t("phone"),
+      description: [
+        <a href="tel:+218 91 123 4567">+218 92 600 8557</a>,
+        <a href="tel:+218 91 123 4567">+218 91 329 1516</a>,
+      ],
+    },
+    {
+      icon: <Printer />,
+      title: t("fax"),
+      description: [<a href="tel:+218 21 369 7577">+218 21 369 7577</a>],
+    },
+  ];
   return (
     <section className="max-w-screen bg-blue-900 text-white py-28 px-12 md:px-16">
-      <div>
-        <h1>{t("title")}</h1>
-        <p>{t("description")}</p>
+      <div className="mb-12 sm:mb-16 md:mb-20">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+          {t("title")}
+        </h1>
+        <p className="text-sm sm:text-base md:text-lg">{t("description")}</p>
       </div>
-      <div>
-        <div>
-          <MapPin />
-          <h2>{t("address")}</h2>
-          <p>{t("address-description")}</p>
-        </div>
-        <div>
-          <Mail />
-          <h2>{t("email")}</h2>
-          <a href="mailto:info@almayar.ly">info@almayar.ly</a>
-        </div>
-        <div>
-          <Phone />
-          <h2>{t("phone")}</h2>
-          <a href="tel:+218 91 123 4567">+218 92 600 8557</a>
-          <a href="tel:+218 91 123 4567">+218 91 329 1516</a>
-        </div>
-        <div>
-          <Printer />
-          <h2>{t("fax")}</h2>
-          <a href="tel:+218 21 369 7577">+218 21 369 7577</a>
-        </div>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-8">
+        {contacts.map((contact, index) => (
+          <div key={index} className="flex flex-col gap-8 py-8">
+            <div className="flex items-center gap-4">
+              {contact.icon}
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
+                {contact.title}
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm md:text-base">
+              {Array.isArray(contact.description)
+                ? contact.description.map((desc, i) => (
+                    <span key={i} className="block">
+                      {desc}
+                    </span>
+                  ))
+                : contact.description}
+            </p>
+          </div>
+        ))}
       </div>
-      <div>
-        <h2>{t("location")}</h2>
+      <div className="flex flex-col justify-center items-center gap-8 py-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold ">
+          {t("location")}
+        </h2>
         <Map />
       </div>
     </section>

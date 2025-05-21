@@ -11,7 +11,7 @@ const Partners = () => {
 
   useEffect(() => {
     axios
-      .get("/api/images?path=partners")
+      .get("/api/images?path=public/partners")
       .then((res) => setImages(res.data))
       .catch((err) => {
         console.log("Error fetching images:", err);
