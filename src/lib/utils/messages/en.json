@@ -172,5 +172,101 @@
         "btn": "Request Training"
       }
     }
+  },
+
+  "FormPages": {
+    "ComplaintForm": {
+      "title": "Complaint or Grievance Form",
+      "description": "Please fill out the following form accurately to ensure your complaint is handled promptly.",
+      "fields": {
+        "formType": "Complaint Form",
+        "type": {
+          "consultation": "Consultation",
+          "training": "Training",
+          "qualification": "Qualification"
+        },
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "job": "Job Title",
+        "email": "Email",
+        "phone": "Phone Number",
+        "complaintSubject": "Subject of the Complaint"
+      },
+      "submit": {
+        "btn": "Submit Form"
+      }
+    },
+    "TrainingNeedsForm": {
+      "title": "Training Needs Form",
+      "description": "Please fill in the following details so we can tailor training programs for your staff.",
+      "fields": {
+        "requestedPrograms": "Requested Programs",
+        "programName": "Desired Training Programs",
+        "preferredTime": "Preferred Schedule",
+        "location": {
+          "internal": "Internal",
+          "external": "External"
+        },
+        "candidates": "Candidates for Training",
+        "name": "Name",
+        "department": "Department",
+        "program": "Program",
+        "preparation": {
+          "title": "Preparation and Notes",
+          "organizationName": "Name of Organization or Company",
+          "notes": "Notes"
+        }
+      },
+      "submit": {
+        "btn": "Submit Form"
+      }
+    },
+    "QualificationRequestForm": {
+      "title": "Qualification Information Request Form",
+      "description": "Please fill in the details below so we can assess your organization's qualification requirements.",
+      "fields": {
+        "organizationInfo": {
+          "title": "Organization Information",
+          "name": "Organization Name",
+          "address": "Address",
+          "phone": "Phone",
+          "email": "Email",
+          "location": "Website or Location"
+        },
+        "systems": {
+          "title": "Applicable Systems",
+          "options": {
+            "ISO_9001": "ISO 9001 Quality Management System",
+            "ISO_14001": "ISO 14001 Environmental Management System",
+            "ISO_22000": "ISO 22000 Food Safety Management System",
+            "ISO_17020": "ISO 17020 Conformity Assessment for Inspection Bodies",
+            "ISO_45001": "ISO 45001 Occupational Health & Safety Management System",
+            "ISO_7101": "ISO 7101 Healthcare Organization Management – Requirements",
+            "ISO_15189": "ISO 15189 Medical Laboratories – Quality & Competence Requirements",
+            "ISO_17025": "ISO 17025 General Requirements for Testing and Calibration Laboratories"
+          }
+        },
+        "employees": {
+          "title": "Number of Employees",
+          "description": "Include permanent, seasonal, and contract employees.",
+          "fields": {
+            "management": "Top Management",
+            "qualityDept": "Quality Department",
+            "workers": "Labor Force",
+            "other": "Other",
+            "branchesCount": "Number of Branches to be Qualified",
+            "branchName": "Select Branch"
+          }
+        },
+        "additionalInfo": {
+          "title": "Additional Information",
+          "productInfo": "Information about the Product or Service Provided",
+          "upload": "Attach Image or File of the Organization"
+        }
+      },
+      "submit": {
+        "btn": "Submit Form"
+      }
+    }
   }
 }

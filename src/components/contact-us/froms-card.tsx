@@ -9,13 +9,14 @@ import {
 } from "@/components/ui/card";
 import { ReactNode } from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface FromsCardProps {
   icon: ReactNode;
   title: string;
   description: string;
   btnLabel: string;
-  btnAction: () => void;
+  herf: string;
 }
 
 const FromsCard = ({
@@ -23,7 +24,7 @@ const FromsCard = ({
   title,
   btnLabel,
   description,
-  btnAction,
+  herf,
 }: FromsCardProps) => {
   return (
     <Card className="max-w-[300px] bg-blue-900 text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -37,8 +38,8 @@ const FromsCard = ({
         {description}
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Button variant="outline" onClick={btnAction} className="text-black">
-          {btnLabel}
+        <Button variant="outline" className="text-black" asChild>
+          <Link href={herf}>{btnLabel}</Link>
         </Button>
       </CardFooter>
     </Card>

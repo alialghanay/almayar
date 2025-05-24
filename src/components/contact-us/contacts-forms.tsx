@@ -12,21 +12,21 @@ const ContactsForm = () => {
       description: t("forms-list.item0.description"),
       btnLabel: t("forms-list.item0.btn"),
       icon: <Folder className="size-8" />,
-      btnAction: () => {},
+      herf: "/contact-us/form?formType=qualification",
     },
     {
       title: t("forms-list.item1.title"),
       description: t("forms-list.item1.description"),
       btnLabel: t("forms-list.item1.btn"),
       icon: <Megaphone className="size-8" />,
-      btnAction: () => {},
+      herf: "/contact-us/form?formType=complaint",
     },
     {
       title: t("forms-list.item2.title"),
       description: t("forms-list.item2.description"),
       btnLabel: t("forms-list.item2.btn"),
       icon: <Lightbulb className="size-8" />,
-      btnAction: () => {},
+      herf: "/contact-us/form?formType=training",
     },
   ];
   return (
@@ -47,7 +47,7 @@ const ContactsForm = () => {
             title={card.title}
             description={card.description}
             btnLabel={card.btnLabel}
-            btnAction={() => null}
+            herf={card.herf}
           />
         ))}
       </div>

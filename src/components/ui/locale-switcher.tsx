@@ -1,6 +1,7 @@
 "use client";
 
-import { Link, usePathname } from "@/lib/utils/i18n/navigation";
+import { useRouter, usePathname } from "@/lib/utils/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { HiLanguage } from "react-icons/hi2";
 import {
@@ -12,47 +13,37 @@ import {
 
 export default function LocaleSwitcher() {
   const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const t = useTranslations("common");
   const locale = useLocale();
+
+  // Preserve all search params as string
+  const queryString = searchParams.toString();
+  const currentQuery = queryString ? `?${queryString}` : "";
+
+  const handleSwitch = (newLocale: string) => {
+    router.push(`${pathname}${currentQuery}`, { locale: newLocale });
+  };
+
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <Link
-          href={pathname}
-          locale={locale === "en" ? "ar" : "en"}
-          className="rounded-full bg-blue-900 px-4 text-white font-bold"
-        >
+      <DropdownMenuTrigger asChild>
+        <button className="rounded-full bg-blue-900 px-4 text-white font-bold">
           <HiLanguage className="size-6 inline-block mx-2" />
           {t("language")}
-        </Link>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
-          <Link href={pathname} locale="ar">
-            <HiLanguage className="size-6 inline-block mx-2" />
-            {t("arabic")}
-          </Link>
+        <DropdownMenuItem onClick={() => handleSwitch("ar")}>
+          <HiLanguage className="size-6 inline-block mx-2" />
+          {t("arabic")}
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link href={pathname} locale="en">
-            <HiLanguage className="size-6 inline-block mx-2" />
-            {t("english")}
-          </Link>
+        <DropdownMenuItem onClick={() => handleSwitch("en")}>
+          <HiLanguage className="size-6 inline-block mx-2" />
+          {t("english")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
-
-/**
- *  <div className="space-x-4">
-      <Link
-        href={pathname}
-        locale={locale === "en" ? "ar" : "en"}
-        className="rounded-full bg-blue-900 px-4 text-white font-bold"
-      >
-        <HiLanguage className="size-6 inline-block mx-2" />
-        {t("language")}
-      </Link>
-    </div>
-*/
