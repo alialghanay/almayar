@@ -21,13 +21,13 @@ const OrganizationInfo = () => {
   );
   return (
     <form className="bg-card rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-y-4 pt-6 pb-4">
-      <h2 className="mx-4 col-span-2 border-b pb-2">{t("title")}</h2>
+      <h3 className="mx-4 col-span-2 border-b pb-2">{t("title")}</h3>
       <FormField
         control={control}
         name="name"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
-            <FormLabel>{t("name")}</FormLabel>
+            <FormLabel className="whitespace-nowrap">{t("name")}</FormLabel>
             <FormControl>
               <Input {...field} />
             </FormControl>
@@ -40,7 +40,7 @@ const OrganizationInfo = () => {
         name="address"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
-            <FormLabel>{t("address")}</FormLabel>
+            <FormLabel className="whitespace-nowrap">{t("address")}</FormLabel>
             <FormControl>
               <Input {...field} />
             </FormControl>
@@ -53,7 +53,7 @@ const OrganizationInfo = () => {
         name="phone"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
-            <FormLabel>{t("phone")}</FormLabel>
+            <FormLabel className="whitespace-nowrap">{t("phone")}</FormLabel>
             <FormControl>
               <Input {...field} />
             </FormControl>
@@ -66,7 +66,7 @@ const OrganizationInfo = () => {
         name="email"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
-            <FormLabel>{t("email")}</FormLabel>
+            <FormLabel className="whitespace-nowrap">{t("email")}</FormLabel>
             <FormControl>
               <Input {...field} />
             </FormControl>
@@ -79,7 +79,7 @@ const OrganizationInfo = () => {
         name="location"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
-            <FormLabel>{t("location")}</FormLabel>
+            <FormLabel className="whitespace-nowrap">{t("location")}</FormLabel>
             <FormControl>
               <Input {...field} />
             </FormControl>

@@ -6,7 +6,7 @@ const QuickLinks = () => {
   const tNavs = useTranslations("Navs");
   return (
     <div>
-      <h2 className="text-lg">{t("quick-links")}</h2>
+      <h3>{t("quick-links")}</h3>
       <nav className="flex flex-col gap-2">
         <Link href="/" className="text-gray-400 hover:text-white">
           {tNavs("home")}

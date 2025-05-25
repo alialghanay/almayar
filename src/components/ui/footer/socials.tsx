@@ -6,7 +6,7 @@ const Socials = () => {
   const tsocials = useTranslations("Socials");
   return (
     <div>
-      <h2 className="text-lg">{t("follow-us")}</h2>
+      <h3>{t("follow-us")}</h3>
       <nav className="flex flex-col gap-2">
         <Link
           href="https://www.linkedin.com/company/yourcompany"

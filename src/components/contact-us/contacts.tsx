@@ -45,11 +45,9 @@ const Contacts = () => {
     },
   ];
   return (
-    <section className="max-w-screen bg-blue-900 text-white py-28 px-12 md:px-16">
+    <section className="max-w-screen bg-blue-900 text-white">
       <div className="mb-12 sm:mb-16 md:mb-20">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-          {t("title")}
-        </h1>
+        <h1 className="mb-2">{t("title")}</h1>
         <p className="text-sm sm:text-base md:text-lg">{t("description")}</p>
       </div>
       <div className="flex flex-col sm:flex-row justify-between items-center gap-8">
@@ -57,9 +55,7 @@ const Contacts = () => {
           <div key={index} className="flex flex-col gap-8 py-8">
             <div className="flex items-center gap-4">
               {contact.icon}
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
-                {contact.title}
-              </h2>
+              <h2>{contact.title}</h2>
             </div>
             <p className="text-xs sm:text-sm md:text-base">
               {Array.isArray(contact.description)
@@ -74,9 +70,7 @@ const Contacts = () => {
         ))}
       </div>
       <div className="flex flex-col justify-center items-center gap-8 py-8">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold ">
-          {t("location")}
-        </h2>
+        <h2>{t("location")}</h2>
         <Map />
       </div>
     </section>

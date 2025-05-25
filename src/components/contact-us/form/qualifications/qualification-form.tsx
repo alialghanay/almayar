@@ -39,9 +39,9 @@ const QualificationForm = () => {
   const t = useTranslations("FormPages.QualificationRequestForm");
   return (
     <FormProvider {...methods}>
-      <article className="py-28 px-12 md:px-16 flex flex-col gap-8 mx-auto">
-        <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
-        <p className="text-gray-600 mb-8">{t("description")}</p>
+      <article className="flex flex-col gap-8 mx-auto">
+        <h2>{t("title")}</h2>
+        <p className="text-gray-600">{t("description")}</p>
         <OrganizationInfo />
         <Systems />
         <Employees />

@@ -9,19 +9,19 @@ const FooterRelated = () => {
         href="/"
         className="underline underline-offset-2 decoration-1 text-gray-400 hover:text-white"
       >
-        <h2 className="text-lg">{tfooter("cookie")}</h2>
+        <h6>{tfooter("cookie")}</h6>
       </Link>
       <Link
         href="/"
         className="underline underline-offset-2 decoration-1 text-gray-400 hover:text-white"
       >
-        <h2 className="text-lg">{tfooter("privacy")}</h2>
+        <h6>{tfooter("privacy")}</h6>
       </Link>
       <Link
         href="/"
         className="underline underline-offset-2 decoration-1 text-gray-400 hover:text-white"
       >
-        <h2 className="text-lg">{tfooter("terms")}</h2>
+        <h6>{tfooter("terms")}</h6>
       </Link>
     </div>
   );

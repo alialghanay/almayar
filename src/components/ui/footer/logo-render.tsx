@@ -8,7 +8,7 @@ const LogoRender = () => {
       <div className="relative w-24 h-16 md:w-12 md:h-8">
         <Image src="/logo.svg" alt="logo" fill className="object-contain" />
       </div>
-      <h1 className="text-2xl">{t("title")}</h1>
+      <h3>{t("title")}</h3>
     </div>
   );
 };

@@ -18,11 +18,9 @@ const SectionOne = () => {
   }, []);
 
   return (
-    <section className="max-w-screen bg-blue-900 text-white py-28 px-12 md:px-16">
+    <section className="max-w-screen bg-blue-900 text-white">
       <div className="mb-12 sm:mb-16 md:mb-20">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-          {t("title")}
-        </h1>
+        <h1 className=" font-bold mb-2">{t("title")}</h1>
         <p className="text-sm sm:text-base md:text-lg">{t("description")}</p>
       </div>
       <div>
