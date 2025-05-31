@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "@/lib/utils/i18n/navigation";
 import { useSearchParams } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { HiLanguage } from "react-icons/hi2";
 import {
   DropdownMenu,
@@ -16,9 +16,7 @@ export default function LocaleSwitcher() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const t = useTranslations("common");
-  const locale = useLocale();
 
-  // Preserve all search params as string
   const queryString = searchParams.toString();
   const currentQuery = queryString ? `?${queryString}` : "";
 
