@@ -59,7 +59,7 @@ const TrainingForm = () => {
           {t("description")}
         </p>
         <p className="text-sm sm:text-base md:text-lg mb-8"></p>
-        <form className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+        <form className="flex flex-col gap-4 ">
           <h3 className="mb-4">{t("fields.requestedPrograms")}</h3>
           {Array.from({ length: programsCount }).map((_, index) => (
             <Programs
@@ -74,7 +74,7 @@ const TrainingForm = () => {
             />
           ))}
         </form>
-        <form className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+        <form className="flex flex-col gap-4 ">
           <h3 className="mb-4">{t("fields.candidates")}</h3>
           {Array.from({ length: candidatesCount }).map((_, index) => (
             <Candidates

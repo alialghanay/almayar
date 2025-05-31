@@ -19,7 +19,7 @@ const Preparation = () => {
   const { control } = useFormContext();
   const t = useTranslations("FormPages.TrainingNeedsForm.fields.preparation");
   return (
-    <form className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+    <form className="flex flex-col gap-4">
       <h3 className="mb-4">{t("title")}</h3>
       <FormField
         control={control}

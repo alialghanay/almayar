@@ -9,10 +9,10 @@ const FormContianer = () => {
   const prams = useSearchParams();
   const formType = prams.get("formType");
   switch (formType) {
-    case "complaint":
-      return <ComplaintForm />;
     case "qualification":
       return <QualificationForm />;
+    case "complaint":
+      return <ComplaintForm />;
     case "training":
       return <TrainingForm />;
     default:

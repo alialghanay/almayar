@@ -18,9 +18,19 @@ const Employees = () => {
   const t = useTranslations(
     "FormPages.QualificationRequestForm.fields.employees.fields"
   );
+  const tTitle = useTranslations(
+    "FormPages.QualificationRequestForm.fields.employees"
+  );
+  const tDescription = useTranslations(
+    "FormPages.QualificationRequestForm.fields.employees"
+  );
   const { control } = useFormContext();
   return (
-    <form className="bg-card rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-y-4 pt-6 pb-4">
+    <form className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 ">
+      <h3 className="mx-4 col-span-4">{tTitle("title")}</h3>
+      <p className="mx-4 col-span-4 border-b pb-2">
+        {tDescription("description")}
+      </p>
       <FormField
         control={control}
         name="management"

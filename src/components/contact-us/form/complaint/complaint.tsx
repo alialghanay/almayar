@@ -34,7 +34,7 @@ const ComplaintForm = () => {
   return (
     <article>
       <Form {...form}>
-        <form className="bg-card rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-y-4 pt-6 pb-4">
+        <form className="grid grid-cols-1 sm:grid-cols-2 gap-y-4">
           <h2 className="mx-4 col-span-2 border-b pb-2">{t("title")}</h2>
           <FormField
             control={form.control}

@@ -21,7 +21,8 @@ const AdditionalInfo = () => {
   );
   const { control } = useFormContext();
   return (
-    <form className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+    <form className="flex flex-col gap-4 ">
+      <h3 className="mx-4 border-b pb-2">{t("title")}</h3>
       <FormField
         control={control}
         name="productInfo"
