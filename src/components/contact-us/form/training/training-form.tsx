@@ -10,16 +10,22 @@ import Candidates from "./candidates";
 import Preparation from "./preparation";
 import { useTranslations } from "next-intl";
 
-const programs = [
+interface Program {
+  name: string;
+  preferredTime: string;
+  location: "internal" | "external";
+}
+
+const programs: Program[] = [
   {
     name: "",
     preferredTime: "",
-    location: "internal" as "internal",
+    location: "internal",
   },
   {
     name: "",
     preferredTime: "",
-    location: "internal" as "internal",
+    location: "internal",
   },
 ];
 
