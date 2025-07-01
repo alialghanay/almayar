@@ -14,6 +14,26 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "almayar",
   description: "almayar company qualification training & consulting",
+  openGraph: {
+    title: "almayar",
+    description: "almayar company qualification training & consulting",
+    url: "https://almayar.ly",
+    siteName: "almayar",
+    images: [
+      {
+        url: "https://almayar.ly/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "almayar company qualification training & consulting",
+        type: "image/svg+xml",
+      },
+    ],
+    locale: "ar",
+    type: "website",
+  },
+  appleWebApp: {
+    title: "almayar",
+  },
 };
 
 export default async function LocaleLayout({

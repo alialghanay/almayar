@@ -9,22 +9,22 @@ const Socials = () => {
       <h3>{t("follow-us")}</h3>
       <nav className="flex flex-col gap-2">
         <Link
-          href="https://www.linkedin.com/company/yourcompany"
-          className="text-gray-400 hover:text-white"
-        >
-          {tsocials("linkedin")}
-        </Link>
-        <Link
           href="https://www.facebook.com/yourcompany"
           className="text-gray-400 hover:text-white"
         >
           {tsocials("facebook")}
         </Link>
         <Link
-          href="https://www.twitter.com/yourcompany"
+          href="mailto:info@almayar.ly"
           className="text-gray-400 hover:text-white"
         >
-          {tsocials("twitter")}
+          info@almayar.ly
+        </Link>
+        <Link
+          href="tel:+218913291516"
+          className="text-gray-400 hover:text-white"
+        >
+          091-3291516
         </Link>
       </nav>
     </div>
