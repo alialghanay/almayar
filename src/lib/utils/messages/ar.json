@@ -181,7 +181,8 @@
       "description": "يرجى تعبئة النموذج التالي بدقة لضمان معالجة شكاوكم بأسرع وقت ممكن.",
       "fields": {
         "formType": "نموذج الشكوى",
-        "type": {
+        "type": "نوع الخدمة",
+        "typeOptions": {
           "consultation": "إستشارة",
           "training": "تدريب",
           "qualification": "تأهيل"
@@ -191,10 +192,15 @@
         "job": "الوظيفة",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
-        "complaintSubject": "موضوع الشكوى"
+        "complaintSubject": "موضوع الشكوى",
+        "complaintSubjectPlaceholder": "يرجى وصف شكواكم بالتفصيل..."
       },
       "submit": {
         "btn": "إرسال النموذج"
+      },
+      "notifications": {
+        "success": "تم إرسال شكواكم بنجاح. سنتواصل معكم قريبًا.",
+        "submitting": "جاري الإرسال..."
       }
     },
     "TrainingNeedsForm": {
@@ -220,6 +226,10 @@
       },
       "submit": {
         "btn": "إرسال النموذج"
+      },
+      "notifications": {
+        "success": "تم إرسال طلب الاحتياجات التدريبية بنجاح. سنتواصل معكم قريبًا.",
+        "submitting": "جاري الإرسال..."
       }
     },
     "QualificationRequestForm": {
@@ -267,6 +277,10 @@
       },
       "submit": {
         "btn": "إرسال النموذج"
+      },
+      "notifications": {
+        "success": "تم إرسال طلب التأهيل بنجاح. سنتواصل معكم قريبًا.",
+        "submitting": "جاري الإرسال..."
       }
     }
   }

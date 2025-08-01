@@ -35,7 +35,7 @@ const Candidates = ({
           <FormItem className="mx-8 flex">
             <FormLabel>{t("name")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -48,7 +48,7 @@ const Candidates = ({
           <FormItem className="mx-8 flex">
             <FormLabel>{t("department")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -61,7 +61,7 @@ const Candidates = ({
           <FormItem className="mx-8 flex">
             <FormLabel>{t("program")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>

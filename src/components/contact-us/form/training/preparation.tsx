@@ -18,16 +18,16 @@ const Preparation = () => {
   const { control } = useFormContext();
   const t = useTranslations("FormPages.TrainingNeedsForm.fields.preparation");
   return (
-    <form className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <h3 className="mb-4">{t("title")}</h3>
       <FormField
         control={control}
-        name="organizationName"
+        name="preparation.organizationName"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel>{t("organizationName")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -35,18 +35,18 @@ const Preparation = () => {
       />
       <FormField
         control={control}
-        name="notes"
+        name="preparation.notes"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel>{t("notes")}</FormLabel>
             <FormControl>
-              <Textarea {...field} />
+              <Textarea {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
         )}
       />
-    </form>
+    </div>
   );
 };
 

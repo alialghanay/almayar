@@ -19,16 +19,16 @@ const OrganizationInfo = () => {
     "FormPages.QualificationRequestForm.fields.organizationInfo"
   );
   return (
-    <form className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 ">
       <h3 className="mx-4 col-span-2 border-b pb-2">{t("title")}</h3>
       <FormField
         control={control}
-        name="name"
+        name="organizationInfo.name"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel className="whitespace-nowrap">{t("name")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -36,12 +36,12 @@ const OrganizationInfo = () => {
       />
       <FormField
         control={control}
-        name="address"
+        name="organizationInfo.address"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel className="whitespace-nowrap">{t("address")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -49,12 +49,12 @@ const OrganizationInfo = () => {
       />
       <FormField
         control={control}
-        name="phone"
+        name="organizationInfo.phone"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel className="whitespace-nowrap">{t("phone")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -62,12 +62,12 @@ const OrganizationInfo = () => {
       />
       <FormField
         control={control}
-        name="email"
+        name="organizationInfo.email"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel className="whitespace-nowrap">{t("email")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -75,18 +75,18 @@ const OrganizationInfo = () => {
       />
       <FormField
         control={control}
-        name="location"
+        name="organizationInfo.location"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel className="whitespace-nowrap">{t("location")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
         )}
       />
-    </form>
+    </div>
   );
 };
 

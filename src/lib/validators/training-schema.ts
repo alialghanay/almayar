@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const timeRegex = /^(0[1-9]|1[0-2]):[0-5][0-9] (AM|PM)$/;
+const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
 export const locationOptions: string[] = ["internal", "external"] as const;
 
 export const trainingFormSchema = z.object({
@@ -11,7 +11,7 @@ export const trainingFormSchema = z.object({
         .string()
         .min(1, { message: "Preferred time is required." })
         .regex(timeRegex, {
-          message: "Invalid time format. Use HH:MM AM/PM.",
+          message: "Invalid time format. Use HH:MM format.",
         }),
       location: z.enum(["internal", "external"]),
     })

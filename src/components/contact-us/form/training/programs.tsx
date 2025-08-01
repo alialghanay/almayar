@@ -37,7 +37,7 @@ const Programs = ({
           <FormItem className="mx-8 flex">
             <FormLabel>{t("programName")}</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -50,7 +50,7 @@ const Programs = ({
           <FormItem className="mx-8 flex">
             <FormLabel>{t("preferredTime")}</FormLabel>
             <FormControl>
-              <Input {...field} type="time" />
+              <Input {...field} type="time" value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>

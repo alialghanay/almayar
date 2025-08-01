@@ -20,16 +20,16 @@ const AdditionalInfo = () => {
   );
   const { control } = useFormContext();
   return (
-    <form className="flex flex-col gap-4 ">
+    <div className="flex flex-col gap-4 ">
       <h3 className="mx-4 border-b pb-2">{t("title")}</h3>
       <FormField
         control={control}
-        name="productInfo"
+        name="additionalInfo.productInfo"
         render={({ field }) => (
           <FormItem className="mx-8 flex">
             <FormLabel>{t("productInfo")}</FormLabel>
             <FormControl>
-              <Textarea {...field} />
+              <Textarea {...field} value={field.value || ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -37,18 +37,22 @@ const AdditionalInfo = () => {
       />
       <FormField
         control={control}
-        name="upload"
-        render={({ field }) => (
+        name="additionalInfo.upload"
+        render={({ field: { onChange, ...field } }) => (
           <FormItem className="mx-8 flex">
             <FormLabel>{t("upload")}</FormLabel>
             <FormControl>
-              <Input type="file" {...field} />
+              <Input
+                type="file"
+                {...field}
+                onChange={(e) => onChange(e.target.files?.[0] || null)}
+              />
             </FormControl>
             <FormMessage />
           </FormItem>
         )}
       />
-    </form>
+    </div>
   );
 };
 

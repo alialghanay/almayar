@@ -180,7 +180,8 @@
       "description": "Please fill out the following form accurately to ensure your complaint is handled promptly.",
       "fields": {
         "formType": "Complaint Form",
-        "type": {
+        "type": "Service Type",
+        "typeOptions": {
           "consultation": "Consultation",
           "training": "Training",
           "qualification": "Qualification"
@@ -190,10 +191,15 @@
         "job": "Job Title",
         "email": "Email",
         "phone": "Phone Number",
-        "complaintSubject": "Subject of the Complaint"
+        "complaintSubject": "Subject of the Complaint",
+        "complaintSubjectPlaceholder": "Please describe your complaint in detail..."
       },
       "submit": {
         "btn": "Submit Form"
+      },
+      "notifications": {
+        "success": "Your complaint has been submitted successfully. We will contact you soon.",
+        "submitting": "Submitting Request..."
       }
     },
     "TrainingNeedsForm": {
@@ -219,6 +225,10 @@
       },
       "submit": {
         "btn": "Submit Form"
+      },
+      "notifications": {
+        "success": "Your training needs request has been submitted successfully. We will contact you soon.",
+        "submitting": "Submitting Request..."
       }
     },
     "QualificationRequestForm": {
@@ -266,6 +276,10 @@
       },
       "submit": {
         "btn": "Submit Form"
+      },
+      "notifications": {
+        "success": "Your qualification request has been submitted successfully. We will contact you soon.",
+        "submitting": "Submitting Request..."
       }
     }
   }

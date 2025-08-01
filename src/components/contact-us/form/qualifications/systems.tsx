@@ -21,7 +21,7 @@ const Systems = () => {
   const t = useTranslations(options);
   const tTitle = useTranslations(title);
   return (
-    <form className="grid grid-cols-1 sm:grid-cols-4 gap-y-4 ">
+    <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-4 ">
       <h3 className="mx-4 col-span-4 border-b pb-2">{tTitle("title")}</h3>
       {systems.map((system) => (
         <FormField
@@ -51,7 +51,7 @@ const Systems = () => {
           )}
         />
       ))}
-    </form>
+    </div>
   );
 };
 
