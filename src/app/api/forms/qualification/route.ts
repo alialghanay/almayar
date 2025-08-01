@@ -16,8 +16,77 @@ export async function POST(request: NextRequest) {
       return createRateLimitResponse(rateLimitResult.retryAfter || 900);
     }
 
-    // Parse request body
-    const body = await request.json();
+    // Parse request body (handle both JSON and FormData)
+    let body: Record<string, unknown>;
+    const contentType = request.headers.get('content-type') || '';
+    
+    if (contentType.includes('application/json')) {
+      body = await request.json();
+    } else if (contentType.includes('multipart/form-data')) {
+      const formData = await request.formData();
+      body = {};
+      
+      // Convert FormData to nested object structure
+      for (const [key, value] of formData.entries()) {
+        if (key.includes('.')) {
+          // Handle nested objects like "organizationInfo.name"
+          const keys = key.split('.');
+          let current: Record<string, unknown> = body;
+          
+          for (let i = 0; i < keys.length - 1; i++) {
+            const currentKey = keys[i];
+            if (!current[currentKey]) {
+              current[currentKey] = {};
+            }
+            current = current[currentKey] as Record<string, unknown>;
+          }
+          
+          const finalKey = keys[keys.length - 1];
+          if (value instanceof File) {
+            current[finalKey] = value;
+          } else {
+            // Convert numeric strings back to numbers only for specific numeric fields
+            const strValue = value.toString();
+            const isNumericField = finalKey.match(/^(management|qualityDept|workers|other|branchesCount)$/);
+            current[finalKey] = isNumericField && !isNaN(Number(strValue)) && strValue !== '' 
+              ? Number(strValue) 
+              : strValue;
+          }
+        } else if (key.includes('[') && key.includes(']')) {
+          // Handle arrays like "systems[0]"
+          const arrayKey = key.substring(0, key.indexOf('['));
+          const indexStr = key.substring(key.indexOf('[') + 1, key.indexOf(']'));
+          const index = parseInt(indexStr, 10);
+          
+          if (!body[arrayKey]) {
+            body[arrayKey] = [];
+          }
+          
+          (body[arrayKey] as unknown[])[index] = value;
+        } else {
+          // Handle simple fields
+          if (value instanceof File) {
+            body[key] = value;
+          } else {
+            // Convert numeric strings back to numbers only for specific numeric fields
+            const strValue = value.toString();
+            const isNumericField = key.match(/^(management|qualityDept|workers|other|branchesCount)$/);
+            body[key] = isNumericField && !isNaN(Number(strValue)) && strValue !== '' 
+              ? Number(strValue) 
+              : strValue;
+          }
+        }
+      }
+    } else {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Unsupported content type",
+          message: "Request must be JSON or multipart/form-data",
+        },
+        { status: 400 }
+      );
+    }
 
     // Validate form data
     const validatedData = qualificationFormSchema.parse(body);
@@ -82,6 +151,7 @@ export async function POST(request: NextRequest) {
           details: error.errors.map((err) => ({
             field: err.path.join("."),
             message: err.message,
+            code: err.code,
           })),
         },
         { status: 400 }

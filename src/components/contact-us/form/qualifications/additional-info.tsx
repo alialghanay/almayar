@@ -38,7 +38,8 @@ const AdditionalInfo = () => {
       <FormField
         control={control}
         name="additionalInfo.upload"
-        render={({ field: { onChange, ...field } }) => (
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        render={({ field: { onChange, value, ...field } }) => (
           <FormItem className="mx-8 flex">
             <FormLabel>{t("upload")}</FormLabel>
             <FormControl>

@@ -42,7 +42,7 @@ const QualificationForm = () => {
       },
       additionalInfo: {
         productInfo: "",
-        upload: undefined,
+        upload: null,
       },
     },
   });

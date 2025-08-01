@@ -38,10 +38,60 @@ export function useFormSubmission<
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`/api/forms/${formType}`, data, {
-        headers: {
+      // Check if data contains file uploads (and not null/undefined)
+      const hasFile = Object.values(data).some((value) => {
+        if (typeof value === "object" && value !== null) {
+          return Object.values(value).some(
+            (nestedValue) => nestedValue instanceof File
+          );
+        }
+        return value instanceof File;
+      });
+
+      let requestData: FormData | T;
+      let headers: Record<string, string>;
+
+      if (hasFile) {
+        // Use FormData for file uploads
+        const formData = new FormData();
+
+        // Convert data to FormData more reliably
+        const convertToFormData = (
+          obj: Record<string, unknown>,
+          prefix = ""
+        ) => {
+          Object.entries(obj).forEach(([key, value]) => {
+            const formKey = prefix ? `${prefix}.${key}` : key;
+
+            if (value instanceof File) {
+              formData.append(formKey, value);
+            } else if (Array.isArray(value)) {
+              // Handle arrays specially
+              value.forEach((item, index) => {
+                formData.append(`${formKey}[${index}]`, String(item));
+              });
+            } else if (value && typeof value === "object") {
+              // Recursive for nested objects
+              convertToFormData(value as Record<string, unknown>, formKey);
+            } else if (value !== null && value !== undefined) {
+              formData.append(formKey, String(value));
+            }
+          });
+        };
+
+        convertToFormData(data as Record<string, unknown>);
+        requestData = formData;
+        headers = {}; // Let browser set Content-Type for multipart/form-data
+      } else {
+        // Use JSON for regular form data
+        requestData = data;
+        headers = {
           "Content-Type": "application/json",
-        },
+        };
+      }
+
+      const response = await axios.post(`/api/forms/${formType}`, requestData, {
+        headers,
         timeout: 30000, // 30 seconds timeout
       });
 

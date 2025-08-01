@@ -45,7 +45,7 @@ export const qualificationFormSchema = z.object({
     productInfo: z
       .string()
       .min(1, { message: "Product/service info is required." }),
-    upload: z.any().optional(), // you can refine this for file type later
+    upload: z.union([z.instanceof(File), z.null()]).optional(),
   }),
 });
 

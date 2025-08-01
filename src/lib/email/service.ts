@@ -90,11 +90,15 @@ export class EmailService {
 
       // Handle file upload if present
       if (data.additionalInfo.upload) {
-        // Note: File handling would depend on your file upload implementation
-        // This is a placeholder for file attachment logic
+        const file = data.additionalInfo.upload;
+
+        // Convert File to Buffer
+        const arrayBuffer = await file.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
         attachments.push({
-          filename: "qualification-document.pdf",
-          content: data.additionalInfo.upload as Buffer,
+          filename: file.name || "qualification-document",
+          content: buffer,
         });
       }
 
