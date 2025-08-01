@@ -1,6 +1,6 @@
-import { ComplaintFormSchema } from '@/lib/validators/complaint-schema';
-import { QualificationFormSchema } from '@/lib/validators/qualifications-schema';
-import { TrainingFormSchema } from '@/lib/validators/training-schema';
+import { ComplaintFormSchema } from "@/lib/validators/complaint-schema";
+import { QualificationFormSchema } from "@/lib/validators/qualifications-schema";
+import { TrainingFormSchema } from "@/lib/validators/training-schema";
 
 export interface EmailTemplateData {
   subject: string;
@@ -8,9 +8,11 @@ export interface EmailTemplateData {
   text: string;
 }
 
-export const generateComplaintEmailTemplate = (data: ComplaintFormSchema): EmailTemplateData => {
+export const generateComplaintEmailTemplate = (
+  data: ComplaintFormSchema
+): EmailTemplateData => {
   const subject = `New Complaint Form Submission - ${data.complaintSubject}`;
-  
+
   const html = `
     <!DOCTYPE html>
     <html>
@@ -24,7 +26,6 @@ export const generateComplaintEmailTemplate = (data: ComplaintFormSchema): Email
         .field-group { margin-bottom: 15px; }
         .field-label { font-weight: bold; color: #555; }
         .field-value { margin-top: 5px; padding: 10px; background-color: #f9f9f9; border-radius: 4px; }
-        .footer { background-color: #f4f4f4; padding: 15px; text-align: center; font-size: 12px; color: #666; }
       </style>
     </head>
     <body>
@@ -74,14 +75,10 @@ export const generateComplaintEmailTemplate = (data: ComplaintFormSchema): Email
           <div class="field-value">${data.complaintSubject}</div>
         </div>
       </div>
-      
-      <div class="footer">
-        <p>This email was automatically generated from the Al Mayar website contact form.</p>
-      </div>
     </body>
     </html>
   `;
-  
+
   const text = `
 New Complaint Form Submission
 Submitted on: ${new Date().toLocaleString()}
@@ -94,18 +91,20 @@ Job Title: ${data.job}
 Email: ${data.email}
 Phone: ${data.phone}
 Complaint Subject: ${data.complaintSubject}
-
-This email was automatically generated from the Al Mayar website contact form.
   `;
-  
+
   return { subject, html, text };
 };
 
-export const generateQualificationEmailTemplate = (data: QualificationFormSchema): EmailTemplateData => {
+export const generateQualificationEmailTemplate = (
+  data: QualificationFormSchema
+): EmailTemplateData => {
   const subject = `New Qualification Request - ${data.organizationInfo.name}`;
-  
-  const systemsList = data.systems.map(system => system.replace(/_/g, ' ')).join(', ');
-  
+
+  const systemsList = data.systems
+    .map((system) => system.replace(/_/g, " "))
+    .join(", ");
+
   const html = `
     <!DOCTYPE html>
     <html>
@@ -121,7 +120,6 @@ export const generateQualificationEmailTemplate = (data: QualificationFormSchema
         .field-group { margin-bottom: 15px; }
         .field-label { font-weight: bold; color: #555; }
         .field-value { margin-top: 5px; padding: 10px; background-color: #f9f9f9; border-radius: 4px; }
-        .footer { background-color: #f4f4f4; padding: 15px; text-align: center; font-size: 12px; color: #666; }
       </style>
     </head>
     <body>
@@ -154,12 +152,16 @@ export const generateQualificationEmailTemplate = (data: QualificationFormSchema
             <div class="field-value">${data.organizationInfo.email}</div>
           </div>
           
-          ${data.organizationInfo.location ? `
+          ${
+            data.organizationInfo.location
+              ? `
           <div class="field-group">
             <div class="field-label">Location:</div>
             <div class="field-value">${data.organizationInfo.location}</div>
           </div>
-          ` : ''}
+          `
+              : ""
+          }
         </div>
         
         <div class="section">
@@ -209,22 +211,22 @@ export const generateQualificationEmailTemplate = (data: QualificationFormSchema
             <div class="field-value">${data.additionalInfo.productInfo}</div>
           </div>
           
-          ${data.additionalInfo.upload ? `
+          ${
+            data.additionalInfo.upload
+              ? `
           <div class="field-group">
             <div class="field-label">File Upload:</div>
             <div class="field-value">File attached (see attachment)</div>
           </div>
-          ` : ''}
+          `
+              : ""
+          }
         </div>
-      </div>
-      
-      <div class="footer">
-        <p>This email was automatically generated from the Al Mayar website qualification request form.</p>
       </div>
     </body>
     </html>
   `;
-  
+
   const text = `
 New Qualification Request
 Submitted on: ${new Date().toLocaleString()}
@@ -234,7 +236,11 @@ Organization Name: ${data.organizationInfo.name}
 Address: ${data.organizationInfo.address}
 Phone: ${data.organizationInfo.phone}
 Email: ${data.organizationInfo.email}
-${data.organizationInfo.location ? `Location: ${data.organizationInfo.location}` : ''}
+${
+  data.organizationInfo.location
+    ? `Location: ${data.organizationInfo.location}`
+    : ""
+}
 
 REQUESTED SYSTEMS
 ${systemsList}
@@ -249,29 +255,41 @@ Branch Name: ${data.employees.branchName}
 
 ADDITIONAL INFORMATION
 Product/Service Information: ${data.additionalInfo.productInfo}
-${data.additionalInfo.upload ? 'File Upload: File attached (see attachment)' : ''}
-
-This email was automatically generated from the Al Mayar website qualification request form.
+${
+  data.additionalInfo.upload
+    ? "File Upload: File attached (see attachment)"
+    : ""
+}
   `;
-  
+
   return { subject, html, text };
 };
 
-export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTemplateData => {
+export const generateTrainingEmailTemplate = (
+  data: TrainingFormSchema
+): EmailTemplateData => {
   const subject = `New Training Request - ${data.preparation.organizationName}`;
-  
-  const programsList = data.programs.map((program, index) => `
+
+  const programsList = data.programs
+    .map(
+      (program, index) => `
     ${index + 1}. ${program.name}
        Preferred Time: ${program.preferredTime}
-       Location: ${program.location === 'internal' ? 'Internal' : 'External'}
-  `).join('');
-  
-  const candidatesList = data.candidates.map((candidate, index) => `
+       Location: ${program.location === "internal" ? "Internal" : "External"}
+  `
+    )
+    .join("");
+
+  const candidatesList = data.candidates
+    .map(
+      (candidate, index) => `
     ${index + 1}. ${candidate.name}
        Department: ${candidate.department}
        Program: ${candidate.program}
-  `).join('');
-  
+  `
+    )
+    .join("");
+
   const html = `
     <!DOCTYPE html>
     <html>
@@ -288,7 +306,6 @@ export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTe
         .field-label { font-weight: bold; color: #555; }
         .field-value { margin-top: 5px; padding: 10px; background-color: #f9f9f9; border-radius: 4px; }
         .item { margin-bottom: 15px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
-        .footer { background-color: #f4f4f4; padding: 15px; text-align: center; font-size: 12px; color: #666; }
       </style>
     </head>
     <body>
@@ -300,10 +317,14 @@ export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTe
       <div class="content">
         <div class="section">
           <div class="section-title">Requested Programs</div>
-          ${data.programs.map((program, index) => `
+          ${data.programs
+            .map(
+              (program, index) => `
             <div class="item">
               <div class="field-group">
-                <div class="field-label">Program ${index + 1}: ${program.name}</div>
+                <div class="field-label">Program ${index + 1}: ${
+                program.name
+              }</div>
               </div>
               <div class="field-group">
                 <div class="field-label">Preferred Time:</div>
@@ -311,18 +332,26 @@ export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTe
               </div>
               <div class="field-group">
                 <div class="field-label">Location:</div>
-                <div class="field-value">${program.location === 'internal' ? 'Internal' : 'External'}</div>
+                <div class="field-value">${
+                  program.location === "internal" ? "Internal" : "External"
+                }</div>
               </div>
             </div>
-          `).join('')}
+          `
+            )
+            .join("")}
         </div>
         
         <div class="section">
           <div class="section-title">Training Candidates</div>
-          ${data.candidates.map((candidate, index) => `
+          ${data.candidates
+            .map(
+              (candidate, index) => `
             <div class="item">
               <div class="field-group">
-                <div class="field-label">Candidate ${index + 1}: ${candidate.name}</div>
+                <div class="field-label">Candidate ${index + 1}: ${
+                candidate.name
+              }</div>
               </div>
               <div class="field-group">
                 <div class="field-label">Department:</div>
@@ -333,7 +362,9 @@ export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTe
                 <div class="field-value">${candidate.program}</div>
               </div>
             </div>
-          `).join('')}
+          `
+            )
+            .join("")}
         </div>
         
         <div class="section">
@@ -344,22 +375,22 @@ export const generateTrainingEmailTemplate = (data: TrainingFormSchema): EmailTe
             <div class="field-value">${data.preparation.organizationName}</div>
           </div>
           
-          ${data.preparation.notes ? `
+          ${
+            data.preparation.notes
+              ? `
           <div class="field-group">
             <div class="field-label">Notes:</div>
             <div class="field-value">${data.preparation.notes}</div>
           </div>
-          ` : ''}
+          `
+              : ""
+          }
         </div>
-      </div>
-      
-      <div class="footer">
-        <p>This email was automatically generated from the Al Mayar website training request form.</p>
       </div>
     </body>
     </html>
   `;
-  
+
   const text = `
 New Training Request
 Submitted on: ${new Date().toLocaleString()}
@@ -372,10 +403,8 @@ ${candidatesList}
 
 ORGANIZATION DETAILS
 Organization Name: ${data.preparation.organizationName}
-${data.preparation.notes ? `Notes: ${data.preparation.notes}` : ''}
-
-This email was automatically generated from the Al Mayar website training request form.
+${data.preparation.notes ? `Notes: ${data.preparation.notes}` : ""}
   `;
-  
+
   return { subject, html, text };
 };

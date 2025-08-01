@@ -34,7 +34,7 @@ const Programs = ({
         control={control}
         name={`programs.${index}.name`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("programName")}</FormLabel>
             <FormControl>
               <Input {...field} value={field.value || ""} />
@@ -47,7 +47,7 @@ const Programs = ({
         control={control}
         name={`programs.${index}.preferredTime`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("preferredTime")}</FormLabel>
             <FormControl>
               <Input {...field} type="time" value={field.value || ""} />
@@ -60,7 +60,7 @@ const Programs = ({
         control={control}
         name={`programs.${index}.location`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}

@@ -71,16 +71,16 @@ const QualificationForm = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <article className="flex flex-col gap-8 mx-auto">
-          <h2>{t("title")}</h2>
-          <p className="text-gray-600">{t("description")}</p>
+        <article className="py-28 px-12 md:px-16 flex flex-col gap-8 mx-auto">
+          <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
+          <p className="text-gray-600 mb-8">{t("description")}</p>
           <OrganizationInfo />
           <Systems />
           <Employees />
           <AdditionalInfo />
 
           {notification && (
-            <div className="mx-4">
+            <div className="mx-6">
               {notification.type === "success" ? (
                 <div className="flex items-center space-x-2 text-green-600 bg-green-50 p-4 rounded-md border border-green-200">
                   <CheckCircleIcon className="h-5 w-5 flex-shrink-0" />

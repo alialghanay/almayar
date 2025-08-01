@@ -20,13 +20,14 @@ const AdditionalInfo = () => {
   );
   const { control } = useFormContext();
   return (
-    <div className="flex flex-col gap-4 ">
-      <h3 className="mx-4 border-b pb-2">{t("title")}</h3>
+    <div className="bg-card rounded-lg shadow-md pt-6 pb-4">
+      <div className="flex flex-col gap-4">
+        <h3 className="mx-4 text-xl font-semibold border-b pb-2">{t("title")}</h3>
       <FormField
         control={control}
         name="additionalInfo.productInfo"
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("productInfo")}</FormLabel>
             <FormControl>
               <Textarea {...field} value={field.value || ""} />
@@ -40,7 +41,7 @@ const AdditionalInfo = () => {
         name="additionalInfo.upload"
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         render={({ field: { onChange, value, ...field } }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("upload")}</FormLabel>
             <FormControl>
               <Input
@@ -53,6 +54,7 @@ const AdditionalInfo = () => {
           </FormItem>
         )}
       />
+      </div>
     </div>
   );
 };

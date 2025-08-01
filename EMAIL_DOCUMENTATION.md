@@ -16,7 +16,6 @@ The email system handles form submissions from three types of forms:
 1. **Email Configuration** (`src/lib/email/config.ts`)
    - Nodemailer transporter setup
    - Environment variable validation
-   - Connection testing utilities
 
 2. **Email Templates** (`src/lib/email/templates.ts`)
    - HTML and text email templates for each form type
@@ -85,25 +84,6 @@ CONTACT_EMAIL=info@almayar.ly
 - `POST /api/forms/qualification` - Submit qualification request
 - `POST /api/forms/training` - Submit training needs form
 
-### Health Check
-
-- `GET /api/health/email` - Test email configuration
-
-### Request/Response Format
-
-#### Request Example (Complaint Form)
-```json
-{
-  "formType": "Complaint Form",
-  "type": "consultation",
-  "firstName": "Ahmed",
-  "lastName": "Mohamed",
-  "job": "Quality Manager",
-  "email": "ahmed@example.com",
-  "phone": "+218912345678",
-  "complaintSubject": "Issue description..."
-}
-```
 
 #### Success Response
 ```json
@@ -197,37 +177,6 @@ const MyForm = () => {
 - Proper formatting for lists and complex data
 - Footer with company information
 
-## Testing
-
-### Email Tester Utility
-
-Use the built-in testing utility to verify email functionality:
-
-```typescript
-import { emailTester } from '@/lib/email/test';
-
-// Test individual components
-await emailTester.testEmailConfiguration();
-await emailTester.testComplaintFormEmail();
-
-// Run all tests
-const results = await emailTester.runAllTests();
-console.log(results);
-```
-
-### Manual Testing
-
-1. Test email configuration:
-   ```bash
-   curl http://localhost:3000/api/health/email
-   ```
-
-2. Test form submission:
-   ```bash
-   curl -X POST http://localhost:3000/api/forms/complaint \
-     -H "Content-Type: application/json" \
-     -d '{"formType":"Complaint Form","type":"consultation","firstName":"Test","lastName":"User","job":"Tester","email":"test@example.com","phone":"123456789","complaintSubject":"Test complaint"}'
-   ```
 
 ## Error Handling
 

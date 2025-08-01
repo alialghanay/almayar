@@ -93,14 +93,18 @@ const TrainingForm = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <article className="flex flex-col gap-8 mx-auto">
-          <h2 className="mb-2">{t("title")}</h2>
+        <article className="py-28 px-12 md:px-16 flex flex-col gap-8 mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+            {t("title")}
+          </h2>
           <p className="text-sm sm:text-base md:text-lg mb-8">
             {t("description")}
           </p>
           <p className="text-sm sm:text-base md:text-lg mb-8"></p>
-          <div className="flex flex-col gap-4 ">
-            <h3 className="mb-4">{t("fields.requestedPrograms")}</h3>
+          <div className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+            <h3 className="mx-6 text-xl font-semibold border-b pb-2 mb-4">
+              {t("fields.requestedPrograms")}
+            </h3>
             {Array.from({ length: programsCount }).map((_, index) => (
               <Programs
                 key={index}
@@ -114,8 +118,10 @@ const TrainingForm = () => {
               />
             ))}
           </div>
-          <div className="flex flex-col gap-4 ">
-            <h3 className="mb-4">{t("fields.candidates")}</h3>
+          <div className="flex flex-col gap-4 bg-card rounded-lg shadow-md pt-6 pb-4">
+            <h3 className="mx-6 text-xl font-semibold border-b pb-2 mb-4">
+              {t("fields.candidates")}
+            </h3>
             {Array.from({ length: candidatesCount }).map((_, index) => (
               <Candidates
                 key={index}
@@ -132,7 +138,7 @@ const TrainingForm = () => {
           <Preparation />
 
           {notification && (
-            <div className="mx-4">
+            <div className="mx-6">
               {notification.type === "success" ? (
                 <div className="flex items-center space-x-2 text-green-600 bg-green-50 p-4 rounded-md border border-green-200">
                   <CheckCircleIcon className="h-5 w-5 flex-shrink-0" />

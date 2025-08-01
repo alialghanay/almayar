@@ -32,7 +32,7 @@ const Candidates = ({
         control={control}
         name={`candidates.${index}.name`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("name")}</FormLabel>
             <FormControl>
               <Input {...field} value={field.value || ""} />
@@ -45,7 +45,7 @@ const Candidates = ({
         control={control}
         name={`candidates.${index}.department`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("department")}</FormLabel>
             <FormControl>
               <Input {...field} value={field.value || ""} />
@@ -58,7 +58,7 @@ const Candidates = ({
         control={control}
         name={`candidates.${index}.program`}
         render={({ field }) => (
-          <FormItem className="mx-8 flex">
+          <FormItem className="mx-6 flex flex-col">
             <FormLabel>{t("program")}</FormLabel>
             <FormControl>
               <Input {...field} value={field.value || ""} />

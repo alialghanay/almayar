@@ -47,19 +47,3 @@ export const createTransporter = () => {
     },
   });
 };
-
-// Test email configuration
-export const testEmailConnection = async () => {
-  try {
-    const transporter = createTransporter();
-    await transporter.verify();
-    return { success: true, message: "Email configuration is valid" };
-  } catch (error) {
-    return {
-      success: false,
-      message: `Email configuration error: ${
-        error instanceof Error ? error.message : "Unknown error"
-      }`,
-    };
-  }
-};

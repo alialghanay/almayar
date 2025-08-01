@@ -67,7 +67,7 @@ const ComplaintForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-y-4"
+          className="bg-card rounded-lg shadow-md grid grid-cols-1 sm:grid-cols-2 gap-y-4 pt-6 pb-4"
         >
           <h2 className="mx-4 col-span-2 border-b pb-2">{t("title")}</h2>
 
@@ -75,7 +75,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="type"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.type")}</FormLabel>
                 <FormControl>
                   <select
@@ -102,7 +102,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="firstName"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.firstName")}</FormLabel>
                 <FormControl>
                   <Input {...field} />
@@ -116,7 +116,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="lastName"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.lastName")}</FormLabel>
                 <FormControl>
                   <Input {...field} />
@@ -130,7 +130,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="job"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.job")}</FormLabel>
                 <FormControl>
                   <Input {...field} />
@@ -144,7 +144,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.email")}</FormLabel>
                 <FormControl>
                   <Input type="email" {...field} />
@@ -158,7 +158,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="phone"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col">
+              <FormItem className="mx-6 flex flex-col">
                 <FormLabel>{t("fields.phone")}</FormLabel>
                 <FormControl>
                   <Input type="tel" {...field} />
@@ -172,7 +172,7 @@ const ComplaintForm = () => {
             control={form.control}
             name="complaintSubject"
             render={({ field }) => (
-              <FormItem className="mx-8 flex flex-col col-span-2">
+              <FormItem className="mx-6 flex flex-col col-span-2">
                 <FormLabel>{t("fields.complaintSubject")}</FormLabel>
                 <FormControl>
                   <Textarea
