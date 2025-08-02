@@ -11,14 +11,14 @@ export async function POST(request: NextRequest) {
   try {
     // Check rate limit
     const rateLimitResult = formSubmissionLimiter.checkRateLimit(request);
-
+    console.log("rateLimitResult:", rateLimitResult);
     if (!rateLimitResult.allowed) {
       return createRateLimitResponse(rateLimitResult.retryAfter || 900);
     }
 
     // Parse request body
     const body = await request.json();
-
+    console.log("body:", body);
     // Validate form data
     const validatedData = complaintFormSchema.parse(body);
 
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error("Complaint form submission error:", error);
+    console.log("Complaint form submission error:", error);
 
     if (error instanceof ZodError) {
       return NextResponse.json(
