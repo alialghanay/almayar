@@ -26,10 +26,10 @@ const Contacts = () => {
       icon: <Phone />,
       title: t("phone"),
       description: [
-        <a key="+218 92 600 8557" href="tel:+218 91 123 4567">
+        <a key="+218 92 600 8557" href="tel:+218926008557" dir="ltr">
           +218 92 600 8557
         </a>,
-        <a key="+218 91 329 1516" href="tel:+218 91 123 4567">
+        <a key="+218 91 329 1516" href="tel:+218913291516" dir="ltr">
           +218 91 329 1516
         </a>,
       ],
@@ -38,7 +38,7 @@ const Contacts = () => {
       icon: <Printer />,
       title: t("fax"),
       description: [
-        <a key="+218 21 369 7577" href="tel:+218 21 369 7577">
+        <a key="+218 21 369 7577" href="tel:+218 21 369 7577" dir="ltr">
           +218 21 369 7577
         </a>,
       ],
