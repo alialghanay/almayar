@@ -20,7 +20,6 @@ export const getEmailConfig = (): EmailConfig => {
     from: process.env.SMTP_FROM || "",
     to: process.env.CONTACT_EMAIL || "",
   };
-  console.log("config:", config);
   // Validate required config
   if (!config.user || !config.pass || !config.from || !config.to) {
     throw new Error(
